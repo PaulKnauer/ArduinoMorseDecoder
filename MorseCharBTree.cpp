@@ -37,11 +37,11 @@ MorseCharBTree::MorseCharBTree() {
   s->setChildren(h, v);
 
   MorseChar *f = new MorseChar('F', u);
-  MorseChar *uDiaeresis = new MorseChar('Ü', u);
+  MorseChar *uDiaeresis = new MorseChar('*', u);
   u->setChildren(f, uDiaeresis);
 
   MorseChar *l = new MorseChar('L', r);
-  MorseChar *aDiaeresis = new MorseChar('Ä', r);
+  MorseChar *aDiaeresis = new MorseChar('*', r);
   r->setChildren(l, aDiaeresis);
 
   MorseChar *p = new MorseChar('P', w);
@@ -60,7 +60,7 @@ MorseCharBTree::MorseCharBTree() {
   MorseChar *q = new MorseChar('Q', g);
   g->setChildren(z, q);
 
-  MorseChar *oDiaeresis = new MorseChar('Ö', o);
+  MorseChar *oDiaeresis = new MorseChar('*', o);
   MorseChar *digraph = new MorseChar('*', o);
   o->setChildren(oDiaeresis, digraph);
 
@@ -68,28 +68,28 @@ MorseCharBTree::MorseCharBTree() {
   MorseChar *four = new MorseChar('4', h);
   h->setChildren(five, four);
 
-  MorseChar *sCircumflex = new MorseChar('Ŝ', v);
+  MorseChar *sCircumflex = new MorseChar('*', v);
   MorseChar *three = new MorseChar('3', v);
-  v->setchildren(sCircumflex, three);
+  v->setChildren(sCircumflex, three);
 
-  MorseChar *eAcute = new MorseChar('É', f);
+  MorseChar *eAcute = new MorseChar('*', f);
   f->setChildren(eAcute, NULL);
 
-  MorseChar *dStroke = new MorseChar('D', uDiaeresis);
+  MorseChar *dStroke = new MorseChar('*', uDiaeresis);
   MorseChar *two = new MorseChar('2', uDiaeresis);
   uDiaeresis->setChildren(dStroke, two);
 
-  MorseChar *eGrave = new MorseChar('È', l);
+  MorseChar *eGrave = new MorseChar('*', l);
   l->setChildren(NULL, eGrave);
 
   MorseChar *plus = new MorseChar('+', aDiaeresis);
   aDiaeresis->setChildren(plus, NULL);
 
-  MorseChar *thorn = new MorseChar('Þ', p);
-  MorseChar *aGrave = new MorseChar('À', p);
+  MorseChar *thorn = new MorseChar('*', p);
+  MorseChar *aGrave = new MorseChar('*', p);
   p->setChildren(thorn, aGrave);
 
-  MorseChar *jCurcumflex = new MorseChar('Ĵ', j);
+  MorseChar *jCurcumflex = new MorseChar('*', j);
   MorseChar *one = new MorseChar('1', j);
   j->setChildren(jCurcumflex, one);
 
@@ -100,20 +100,20 @@ MorseCharBTree::MorseCharBTree() {
   MorseChar *slash = new MorseChar('/', x);
   x->setChildren(slash, NULL);
 
-  MorseChar *cCedilla = new MorseChar('Ç', c);
-  MorseChar *nil = new MorseChar(' ', c);
-  c->setChildren(cCedilla, nil);
+  MorseChar *cCedilla = new MorseChar('*', c);
+  MorseChar *nil1 = new MorseChar(' ', c);
+  c->setChildren(cCedilla, nil1);
 
-  MorseChar *hCircumflex = new MorseChar('Ĥ', y);
+  MorseChar *hCircumflex = new MorseChar('*', y);
 //  MorseChar *openParenthesis = new MorseChar('(', y);
   y->setChildren(hCircumflex, NULL);
 
   MorseChar *seven = new MorseChar('7', z);
-  MorseChar *nil = new MorseChar(' ', z);
-  z->setChildren(seven, nil);
+  MorseChar *nil2 = new MorseChar('*', z);
+  z->setChildren(seven, nil2);
 
-  MorseChar *gCircumflex = new MorseChar('Ĝ', q);
-  MorseChar *nTilde = new MorseChar('Ñ', q);
+  MorseChar *gCircumflex = new MorseChar('*', q);
+  MorseChar *nTilde = new MorseChar('*', q);
   q->setChildren(gCircumflex, nTilde);
 
   MorseChar *eight = new MorseChar('8', oDiaeresis);
@@ -142,18 +142,18 @@ MorseCharBTree::MorseCharBTree() {
   MorseChar *hyphen = new MorseChar('-', six);
   six->setChildren(NULL, hyphen);
 
-  MorseChar *semicolon = new MorseChar(';', nil);
-  MorseChar *exclamationMark = new MorseChar('!', nil);
-  nil->setChildren(semicolon, exclamationMark);
+  MorseChar *semicolon = new MorseChar(';', nil1);
+  MorseChar *exclamationMark = new MorseChar('!', nil1);
+  nil1->setChildren(semicolon, exclamationMark);
 
   MorseChar *closeParenthesis = new MorseChar(')', hCircumflex);
   hCircumflex->setChildren(NULL, closeParenthesis);
 
-  MorseChar *comma = new MorseChar(',', nil);
-  nil->setChildren(NULL, comma);
+  MorseChar *comma = new MorseChar(',', nil2);
+  nil2->setChildren(NULL, comma);
 
   MorseChar *colon = new MorseChar(':', eight);
-  eight->sertChildren(colon, NULL);
+  eight->setChildren(colon, NULL);
 }
 
 MorseChar *MorseCharBTree::getRoot() {
