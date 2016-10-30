@@ -1,16 +1,11 @@
 #include "MorseChar.h"
 
-MorseChar::MorseChar(char character, MorseChar *parent) {
+MorseChar::MorseChar(char character) {
   _character = character;
-  _parent = parent;
 }
 
 char MorseChar::getChar() {
   return _character;
-}
-
-MorseChar *MorseChar::getParent() {
-  return _parent;
 }
 
 MorseChar *MorseChar::getDitChild() {

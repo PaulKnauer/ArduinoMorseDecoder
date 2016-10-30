@@ -3,160 +3,176 @@
 #include "Arduino.h"
 
 MorseCharBTree::MorseCharBTree() {
-  _root = new MorseChar(' ', NULL);
-  MorseChar *e = new MorseChar('E', _root);
-  MorseChar *t = new MorseChar('T', _root);
+  _root = new MorseChar('*');
+  MorseChar *e = new MorseChar('E');
+  MorseChar *t = new MorseChar('T');
   _root->setChildren(e, t);
 
-  MorseChar *i = new MorseChar('I', e);
-  MorseChar *a = new MorseChar('A', e);
+  MorseChar *i = new MorseChar('I');
+  MorseChar *a = new MorseChar('A');
   e->setChildren(i, a);
 
-  MorseChar *n = new MorseChar('N', t);
-  MorseChar *m = new MorseChar('M', t);
+  MorseChar *n = new MorseChar('N');
+  MorseChar *m = new MorseChar('M');
   t->setChildren(n, m);
 
-  MorseChar *s = new MorseChar('S', i);
-  MorseChar *u = new MorseChar('U', i);
+  MorseChar *s = new MorseChar('S');
+  MorseChar *u = new MorseChar('U');
   i->setChildren(s, u);
 
-  MorseChar *r = new MorseChar('R', a);
-  MorseChar *w = new MorseChar('W', a);
+  MorseChar *r = new MorseChar('R');
+  MorseChar *w = new MorseChar('W');
   a->setChildren(r, w);
 
-  MorseChar *d = new MorseChar('D', n);
-  MorseChar *k = new MorseChar('K', n);
+  MorseChar *d = new MorseChar('D');
+  MorseChar *k = new MorseChar('K');
   n->setChildren(d, k);
 
-  MorseChar *g = new MorseChar('G', m);
-  MorseChar *o = new MorseChar('O', m);
+  MorseChar *g = new MorseChar('G');
+  MorseChar *o = new MorseChar('O');
   m->setChildren(g, o);
 
-  MorseChar *h = new MorseChar('H', s);
-  MorseChar *v = new MorseChar('V', s);
+  MorseChar *h = new MorseChar('H');
+  MorseChar *v = new MorseChar('V');
   s->setChildren(h, v);
 
-  MorseChar *f = new MorseChar('F', u);
-  MorseChar *uDiaeresis = new MorseChar('*', u);
+  MorseChar *f = new MorseChar('F');
+  MorseChar *uDiaeresis = new MorseChar('*');
   u->setChildren(f, uDiaeresis);
 
-  MorseChar *l = new MorseChar('L', r);
-  MorseChar *aDiaeresis = new MorseChar('*', r);
+  MorseChar *l = new MorseChar('L');
+  MorseChar *aDiaeresis = new MorseChar('*');
   r->setChildren(l, aDiaeresis);
 
-  MorseChar *p = new MorseChar('P', w);
-  MorseChar *j = new MorseChar('J', w);
+  MorseChar *p = new MorseChar('P');
+  MorseChar *j = new MorseChar('J');
   w->setChildren(p, j);
 
-  MorseChar *b = new MorseChar('B', d);
-  MorseChar *x = new MorseChar('X', d);
+  MorseChar *b = new MorseChar('B');
+  MorseChar *x = new MorseChar('X');
   d->setChildren(b, x);
 
-  MorseChar *c = new MorseChar('C', k);
-  MorseChar *y = new MorseChar('Y', k);
+  MorseChar *c = new MorseChar('C');
+  MorseChar *y = new MorseChar('Y');
   k->setChildren(c, y);
 
-  MorseChar *z = new MorseChar('Z', g);
-  MorseChar *q = new MorseChar('Q', g);
+  MorseChar *z = new MorseChar('Z');
+  MorseChar *q = new MorseChar('Q');
   g->setChildren(z, q);
 
-  MorseChar *oDiaeresis = new MorseChar('*', o);
-  MorseChar *digraph = new MorseChar('*', o);
+  MorseChar *oDiaeresis = new MorseChar('*');
+  MorseChar *digraph = new MorseChar('*');
   o->setChildren(oDiaeresis, digraph);
 
-  MorseChar *five = new MorseChar('5', h);
-  MorseChar *four = new MorseChar('4', h);
+  MorseChar *five = new MorseChar('5');
+  MorseChar *four = new MorseChar('4');
   h->setChildren(five, four);
 
-  MorseChar *sCircumflex = new MorseChar('*', v);
-  MorseChar *three = new MorseChar('3', v);
+  MorseChar *sCircumflex = new MorseChar('*');
+  MorseChar *three = new MorseChar('3');
   v->setChildren(sCircumflex, three);
 
-  MorseChar *eAcute = new MorseChar('*', f);
+  MorseChar *eAcute = new MorseChar('*');
   f->setChildren(eAcute, NULL);
 
-  MorseChar *dStroke = new MorseChar('*', uDiaeresis);
-  MorseChar *two = new MorseChar('2', uDiaeresis);
+  MorseChar *dStroke = new MorseChar('*');
+  MorseChar *two = new MorseChar('2');
   uDiaeresis->setChildren(dStroke, two);
 
-  MorseChar *eGrave = new MorseChar('*', l);
+  MorseChar *eGrave = new MorseChar('*');
   l->setChildren(NULL, eGrave);
 
-  MorseChar *plus = new MorseChar('+', aDiaeresis);
+  MorseChar *plus = new MorseChar('+');
   aDiaeresis->setChildren(plus, NULL);
 
-  MorseChar *thorn = new MorseChar('*', p);
-  MorseChar *aGrave = new MorseChar('*', p);
+  MorseChar *thorn = new MorseChar('*');
+  MorseChar *aGrave = new MorseChar('*');
   p->setChildren(thorn, aGrave);
 
-  MorseChar *jCurcumflex = new MorseChar('*', j);
-  MorseChar *one = new MorseChar('1', j);
+  MorseChar *jCurcumflex = new MorseChar('*');
+  MorseChar *one = new MorseChar('1');
   j->setChildren(jCurcumflex, one);
 
-  MorseChar *six = new MorseChar('6', b);
-  MorseChar *equals = new MorseChar('=', b);
+  MorseChar *six = new MorseChar('6');
+  MorseChar *equals = new MorseChar('=');
   b->setChildren(six, equals);
 
-  MorseChar *slash = new MorseChar('/', x);
+  MorseChar *slash = new MorseChar('/');
   x->setChildren(slash, NULL);
 
-  MorseChar *cCedilla = new MorseChar('*', c);
-  MorseChar *nil1 = new MorseChar(' ', c);
+  MorseChar *cCedilla = new MorseChar('*');
+  MorseChar *nil1 = new MorseChar(' ');
   c->setChildren(cCedilla, nil1);
 
-  MorseChar *hCircumflex = new MorseChar('*', y);
-//  MorseChar *openParenthesis = new MorseChar('(', y);
+  MorseChar *hCircumflex = new MorseChar('*');
+  //  MorseChar *openParenthesis = new MorseChar('(');
   y->setChildren(hCircumflex, NULL);
 
-  MorseChar *seven = new MorseChar('7', z);
-  MorseChar *nil2 = new MorseChar('*', z);
+  MorseChar *seven = new MorseChar('7');
+  MorseChar *nil2 = new MorseChar('*');
   z->setChildren(seven, nil2);
 
-  MorseChar *gCircumflex = new MorseChar('*', q);
-  MorseChar *nTilde = new MorseChar('*', q);
+  MorseChar *gCircumflex = new MorseChar('*');
+  MorseChar *nTilde = new MorseChar('*');
   q->setChildren(gCircumflex, nTilde);
 
-  MorseChar *eight = new MorseChar('8', oDiaeresis);
+  MorseChar *eight = new MorseChar('8');
   oDiaeresis->setChildren(eight, NULL);
 
-  MorseChar *nine = new MorseChar('9', digraph);
-  MorseChar *zero = new MorseChar('0', digraph);
+  MorseChar *nine = new MorseChar('9');
+  MorseChar *zero = new MorseChar('0');
   digraph->setChildren(nine, zero);
 
-  MorseChar *questionMark = new MorseChar('?', dStroke);
-  MorseChar *underscore = new MorseChar('_', dStroke);
+  MorseChar *questionMark = new MorseChar('?');
+  MorseChar *underscore = new MorseChar('_');
   dStroke->setChildren(questionMark, underscore);
 
-  MorseChar *doubleQuotes = new MorseChar('"', eGrave);
+  MorseChar *doubleQuotes = new MorseChar('"');
   eGrave->setChildren(doubleQuotes, NULL);
 
-  MorseChar *period = new MorseChar('.', plus);
+  MorseChar *period = new MorseChar('.');
   plus->setChildren(NULL, period);
 
-  MorseChar *commercialAt = new MorseChar('@', aGrave);
+  MorseChar *commercialAt = new MorseChar('@');
   aGrave->setChildren(commercialAt, NULL);
 
-  MorseChar *singleQuotes = new MorseChar('\'', _root);
+  MorseChar *singleQuotes = new MorseChar('\'');
   one->setChildren(singleQuotes, NULL);
 
-  MorseChar *hyphen = new MorseChar('-', six);
+  MorseChar *hyphen = new MorseChar('-');
   six->setChildren(NULL, hyphen);
 
-  MorseChar *semicolon = new MorseChar(';', nil1);
-  MorseChar *exclamationMark = new MorseChar('!', nil1);
+  MorseChar *semicolon = new MorseChar(';');
+  MorseChar *exclamationMark = new MorseChar('!');
   nil1->setChildren(semicolon, exclamationMark);
 
-  MorseChar *closeParenthesis = new MorseChar(')', hCircumflex);
+  MorseChar *closeParenthesis = new MorseChar(')');
   hCircumflex->setChildren(NULL, closeParenthesis);
 
-  MorseChar *comma = new MorseChar(',', nil2);
+  MorseChar *comma = new MorseChar(',');
   nil2->setChildren(NULL, comma);
 
-  MorseChar *colon = new MorseChar(':', eight);
+  MorseChar *colon = new MorseChar(':');
   eight->setChildren(colon, NULL);
+
+  _cursor = _root;
 }
 
-MorseChar *MorseCharBTree::getRoot() {
-  return _root;
+void MorseCharBTree::dit() {
+  _cursor = _cursor->getDitChild();
 }
 
+void MorseCharBTree::dah() {
+  _cursor = _cursor->getDahChild();
+}
+
+char MorseCharBTree::letterSpace() {
+  char decodedChar = _cursor->getChar();
+  _cursor = _root;
+  return decodedChar;
+}
+
+char MorseCharBTree::wordSpace() {
+  _cursor = _root;
+  return ' ';
+}

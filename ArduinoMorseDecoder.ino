@@ -1,9 +1,18 @@
-void setup() {
-  // put your setup code here, to run once:
+#include "MorseDecoder.h"
 
+#include "Arduino.h"
+
+#define BAUD_RATE 115200
+
+MorseDecoder decoder;
+
+void setup() {
+  Serial.begin(BAUD_RATE);
+  delay(3000);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  String *morse = new String("-.- \n- .... .. ... \n.. ... \n.- \n- . ... - \n-- . ... ... .- --. . \n");
+  decoder.decodeMorse(morse);
+  delay(3000);
 }

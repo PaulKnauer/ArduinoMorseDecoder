@@ -6,9 +6,13 @@
 class MorseCharBTree {
   public:
     MorseCharBTree();
-    MorseChar *getRoot();
+    void dit();
+    void dah();
+    char letterSpace();
+    char wordSpace();
   private:
     MorseChar *_root;
+    MorseChar *_cursor;
 };
 
 #endif

@@ -3,15 +3,13 @@
 
 class MorseChar {
   public:
-    MorseChar(char character, MorseChar *parent);
+    MorseChar(char character);
     char getChar();
-    MorseChar *getParent();
     MorseChar *getDitChild();
     MorseChar *getDahChild();
     void setChildren(MorseChar *ditChild, MorseChar *dahChild);
   private:
     char _character;
-    MorseChar *_parent;
     MorseChar *_ditChild;
     MorseChar *_dahChild;
 };
